@@ -87,6 +87,21 @@ class Barangs {
         });
       });
   }
+
+  // read barang berdasarkan id
+  static getBarangById(req, res) {
+    return Barang.findByPk(req.params.id)
+      .then(barang => {
+        res.status(201).send(barang);
+      })
+      .catch(error =>
+        res.status(400).send({
+          success: false,
+          message: "Barang fail to read",
+          error
+        })
+      );
+  }
 }
 
 module.exports = Barangs;

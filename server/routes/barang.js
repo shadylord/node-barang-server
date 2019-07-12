@@ -16,4 +16,7 @@ router.get("/", Barangs.getBarang);
 // update barang berdasarkan id
 router.patch("/update/:id", Barangs.updateBarang);
 
+// get barang berdasarkan id
+router.get("/:id", Barangs.getBarangById);
+
 module.exports = router;
